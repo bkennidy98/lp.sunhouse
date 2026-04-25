@@ -1,0 +1,831 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" prefix="og: http://ogp.me/ns#" itemscope="" itemtype="http://schema.org/WebPage">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="canonical" href="/">
+    <title>
+      Sun House Energia Solar
+    </title>
+    <meta name="description" content="Reduza até 95% o valor da sua conta de luz.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
+    <meta property="og:title" content="Sun House Energia Solar">
+    <meta property="og:description" content="Reduza até 95% o valor da sua conta de luz.">
+    <meta property="og:image" content="images/share.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sun House Energia Solar">
+    <meta name="twitter:description" content="Reduza até 95% o valor da sua conta de luz.">
+    <meta name="twitter:image" content="/assets/images/share.jpg?1756921621298">
+    <meta itemprop="name" content="Sun House Energia Solar">
+    <meta itemprop="description" content="Reduza até 95% o valor da sua conta de luz.">
+    <meta itemprop="image" content="/assets/images/share.jpg?1756921621298">
+    <meta name="theme-color" content="#001460">
+    <link rel="shortcut icon" href="images/sunhouse.ico">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
+    <style>
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        background-color: #fff;
+      }
+
+      .preloader__bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+      }
+
+      .preloader__bar__progress {
+        width: 0;
+        height: 100%;
+        background-color: #001460;
+      }
+
+      @keyframes button-pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(229, 173, 26, 0.55);
+        }
+
+        70% {
+          transform: scale(1.03);
+          box-shadow: 0 0 0 18px rgba(229, 173, 26, 0);
+        }
+
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(229, 173, 26, 0);
+        }
+      }
+
+      @keyframes button-shine {
+        0% {
+          left: -140%;
+        }
+
+        60%,
+        100% {
+          left: 140%;
+        }
+      }
+    </style>
+  </head>
+  <body id="index" class="pause-scroll">
+    <div class="preloader">
+      <div class="preloader__bar">
+        <div class="preloader__bar__progress">
+        </div>
+      </div>
+    </div>
+    <a href="#goToContent" tabindex="1">
+      Ir para o conteúdo
+    </a>
+    <header data-component="templates/header">
+      <div class="container">
+        <img src="images/logo.webp" alt="Sun House Engenharia" class="top-logo">
+      </div>
+    </header>
+    <main id="goToContent">
+      <div data-component="pages/home">
+        <div data-component="sections/section-hero">
+          <div class="container">
+            <div class="box-text-img">
+              <div class="box-text" data-ani-type="fade-top">
+                <h2>
+                  Reduza em
+                  <br>
+                  <b>
+                    até 95%
+                  </b>
+                  a sua
+                  <br>
+                  conta de energia
+                </h2>
+                <p>
+                  Descubra o valor do seu
+                  <br>
+                  projeto de energia solar
+                  <br>
+                  com a nossa plataforma
+                  <br>
+                  de simulação
+                  <b>
+                    Gratuita.
+                  </b>
+                </p>
+              </div>
+              <picture class="img-hero" data-ani-type="fade-top">
+                <source media="(min-width: 769px)" srcset="images/hero.webp">
+                <img src="images/hero-mobile.webp" width="169" height="202" alt="Foto César Filho">
+              </picture>
+            </div>
+            <div class="box-form" data-ani-type="fade-top">
+              <div data-component="blocks/form">
+                <h3>
+                  Simule seu projeto
+                </h3>
+                <form class="form-simulator">
+                  <input type="text" name="nome" placeholder="Nome*" required="" class="field-form">
+                  <input type="tel" name="celular" placeholder="Celular*" minlength="19" maxlength="19" required="" class="field-form celular-field input-tel">
+                  <input type="email" name="email" placeholder="Email*" required="" class="field-form">
+                  <select name="segmento" class="field-form field-select" required="">
+                    <option value="">
+                      Segmento*
+                    </option>
+                    <option value="Residência">
+                      Residência
+                    </option>
+                    <option value="Residência em Condomínio">
+                      Residência em Condomínio
+                    </option>
+                    <option value="Apartamento">
+                      Apartamento
+                    </option>
+                    <option value="Comércio">
+                      Comércio
+                    </option>
+                    <option value="Agronegócio">
+                      Agronegócio
+                    </option>
+                    <option value="Indústria">
+                      Indústria
+                    </option>
+                    <option value="Condomínio (área comum)">
+                      Condomínio (área comum)
+                    </option>
+                  </select>
+                  <div class="row-radio-button">
+                    <p>
+                      Já conhece o sistema de ENERGIA SOLAR?*
+                    </p>
+                    <div class="box-radio">
+                      <label>
+                        <input type="radio" name="conhece" value="1" required="">
+                        <span class="radio-button">
+                        </span>
+                        <span class="txt-label">
+                          Sim
+                        </span>
+                      </label>
+                      <label>
+                        <input type="radio" name="conhece" value="0" required="">
+                        <span class="radio-button">
+                        </span>
+                        <span class="txt-label">
+                          Não
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="box-consumption">
+                    <h4>
+                      Informe seu consumo
+                      <br>
+                      médio mensal:
+                    </h4>
+                    <div class="options-consumption">
+                      <label>
+                        <input type="radio" name="consumo" value="100" required="">
+                        <span class="txt-label">
+                          R$100 - R$249
+                        </span>
+                      </label>
+                      <label>
+                        <input type="radio" name="consumo" value="400" required="">
+                        <span class="txt-label">
+                          R$250 - R$399
+                        </span>
+                      </label>
+                      <label>
+                        <input type="radio" name="consumo" value="600" required="">
+                        <span class="txt-label">
+                          R$400 - R$599
+                        </span>
+                      </label>
+                      <label>
+                        <input type="radio" name="consumo" value="1000" required="">
+                        <span class="txt-label">
+                          R$600 - R$999
+                        </span>
+                      </label>
+                      <label>
+                        <input type="radio" name="consumo" value="2000" required="">
+                        <span class="txt-label">
+                          Acima de R$1.000
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="box-button">
+                    <button class="btn-default btn-calculate">
+                      <span class="btn-text">
+                        Calcular
+                      </span>
+                    </button>
+                  </div>
+                  <div class="loader">
+                    <img src="images/loader.gif" alt="">
+                  </div>
+                  <div class="msg-error">
+                    <p>
+                      Desculpe, Ocorreu um erro. Tente novamente.
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-component="sections/section-video-1">
+          <div class="container">
+            <h2 class="title-default" data-ani-type="fade-top" data-ani-group="video-1">
+              Entenda como funciona
+              <br>
+              o sistema de energia solar
+            </h2>
+            <div class="box-video" data-ani-type="fade-top" data-ani-group="video-1">
+              <a href="videos/sunhouse_movie.mp4" data-fancybox="" class="thumb-video" aria-label="Vídeo Sun House">
+                <img src="images/video-thumb-sunhouse.png" width="750" height="421" alt="Thumb vídeo Sun House">
+                <span class="video-play-badge" aria-hidden="true">
+                  <img src="images/icon-play.webp" width="110" height="110" alt="">
+                </span>
+              </a>
+            </div>
+            <div data-ani-type="fade-top" data-ani-group="video-1">
+              <button type="button" data-go-to-form="" class="btn-default">
+                <span>
+                  Simular Grátis
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div data-component="sections/section-benefits">
+          <div class="container">
+            <h2 class="title-default" data-ani-type="fade-top" data-ani-group="beneficios">
+              Pronto para
+              <b>
+                economizar
+              </b>
+              ?
+              <br>
+              <b>
+                Simule
+              </b>
+              seu projeto agora mesmo!
+            </h2>
+            <div class="box-benefits">
+              <ul data-ani-type="fade-top" data-ani-group="beneficios">
+                <li>
+                  <img src="images/icon-independencia-energetica.webp" width="40" height="37" alt="ícone Independência energética" loading="lazy">
+                  <span>
+                    Independência energética
+                  </span>
+                </li>
+                <li>
+                  <img src="images/icon-energia-sustentavel.webp" width="40" height="37" alt="ícone Energia sustentável" loading="lazy">
+                  <span>
+                    Energia sustentável
+                  </span>
+                </li>
+                <li>
+                  <img src="images/icon-payback-atrativo.webp" width="40" height="37" alt="icone Payback super atrativo" loading="lazy">
+                  <span>
+                    Payback super atrativo
+                  </span>
+                </li>
+              </ul>
+              <img src="images/img-beneficios.webp" width="348" height="467" alt="Foto Craque Neto" loading="lazy" data-ani-type="fade-top" data-ani-group="beneficios" class="img-center">
+              <ul data-ani-type="fade-top" data-ani-group="beneficios">
+                <li>
+                  <img src="images/icon-baixa-manutencao.webp" width="40" height="37" alt="ícone Baixa manutenção" loading="lazy">
+                  <span>
+                    Baixa manutenção
+                  </span>
+                </li>
+                <li>
+                  <img src="images/icon-livre-de-bandeiras.webp" width="40" height="37" alt="icone Livre de bandeiras" loading="lazy">
+                  <span>
+                    Livre de bandeiras
+                  </span>
+                </li>
+                <li>
+                  <img src="images/icon-vida-util.webp" width="40" height="37" alt="ícone Vida útil de 25 anos" loading="lazy">
+                  <span>
+                    Vida útil de 25 anos
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div data-component="sections/section-video-2">
+          <div class="container">
+            <h2 class="title-default" data-ani-type="fade-top" data-ani-group="video-2">
+              Vem para o time que
+              <br>
+              produz a própria
+              <b>
+                energia elétrica
+              </b>
+              !
+            </h2>
+            <div data-ani-type="fade-top" data-ani-group="video-2">
+              <button type="button" data-go-to-form="" class="btn-default">
+                <span>
+                  Quero economizar
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="lead-success-modal" aria-hidden="true">
+      <div class="lead-success-modal__backdrop" data-close-lead-modal=""></div>
+      <div class="lead-success-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-success-title">
+        <button type="button" class="lead-success-modal__close" aria-label="Fechar pop-up" data-close-lead-modal="">
+          ×
+        </button>
+        <div class="lead-success-modal__badge">
+          <span>
+            ✓
+          </span>
+        </div>
+        <h3 id="lead-success-title" class="lead-success-modal__title">
+          Obrigado!
+        </h3>
+        <p class="lead-success-modal__text">
+          Recebemos suas informações. A equipe da <strong>Sun House</strong> vai analisar seu pedido e entrar em contato em breve.
+        </p>
+        <div class="lead-success-modal__actions">
+          <button type="button" class="lead-success-modal__button lead-success-modal__button--secondary" data-close-lead-modal="">
+            Fechar
+          </button>
+          <a href="https://wa.me/558491340802?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%21" target="_blank" rel="noopener noreferrer" class="lead-success-modal__button lead-success-modal__button--primary">
+            <span class="lead-success-modal__button-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" role="presentation">
+                <path fill="currentColor" d="M19.11 17.28c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.08-.29-.14-1.2-.44-2.29-1.41-.85-.75-1.42-1.68-1.59-1.96-.17-.29-.02-.44.12-.58.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.64-1.54-.88-2.11-.23-.55-.46-.48-.64-.49h-.55c-.19 0-.48.07-.74.36-.26.29-1 1-.95 2.43.05 1.43 1.02 2.8 1.16 3 .14.19 2 3.06 4.84 4.29.68.29 1.21.46 1.63.59.68.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34Z"/>
+                <path fill="currentColor" d="M16.02 3.2c-6.98 0-12.64 5.66-12.64 12.64 0 2.22.58 4.39 1.68 6.3L3.2 28.8l6.82-1.79a12.6 12.6 0 0 0 6 1.52h.01c6.97 0 12.64-5.67 12.64-12.64S22.99 3.2 16.02 3.2Zm0 23.2h-.01a10.5 10.5 0 0 1-5.34-1.46l-.38-.22-4.05 1.06 1.08-3.95-.25-.41a10.52 10.52 0 1 1 8.95 4.98Z"/>
+              </svg>
+            </span>
+            <span>
+              Falar com um especialista
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer data-component="templates/footer">
+      <div class="row-1">
+        <img src="images/logo.webp" width="142" height="33" alt="Sun House Energia Solar" class="logo-1">
+      </div>
+      <div class="row-2">
+        <small>
+          2026 Sun House - Todos os direitos reservados
+        </small>
+      </div>
+    </footer>
+    <script>
+      var base = "/";
+    </script>
+    <!-- Sun House overrides -->
+    <style>
+      .btn-default {
+        overflow: hidden;
+        background-color: #e5ad1a !important;
+        animation: button-pulse 2s infinite;
+      }
+
+      .btn-default:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -140%;
+        width: 32%;
+        height: 100%;
+        background: linear-gradient(
+          100deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.18) 35%,
+          rgba(255, 255, 255, 0.7) 50%,
+          rgba(255, 255, 255, 0.18) 65%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-22deg);
+        pointer-events: none;
+        animation: button-shine 2.6s infinite;
+      }
+
+      .btn-default:before {
+        background-color: #c99610 !important;
+      }
+
+      .title-default,
+      .title-default b,
+      [data-component="blocks/form"] h3,
+      [data-component="blocks/form"] .form-simulator h4,
+      [data-component="blocks/form"] .form-simulator .row-radio-button,
+      [data-component="blocks/form"] .form-simulator .options-consumption label .txt-label,
+      [data-component="sections/section-hero"] .box-text-img .box-text h2 {
+        color: #001460 !important;
+      }
+
+      [data-component="sections/section-hero"] .box-text-img .box-text h2 b {
+        color: #e5ad1a !important;
+      }
+
+      [data-component="blocks/form"] .form-simulator .row-radio-button .box-radio label .radio-button:before {
+        background-color: #001460 !important;
+      }
+
+      [data-component="blocks/form"] .form-simulator .options-consumption label input:checked + .txt-label {
+        background-color: #e5ad1a !important;
+        color: #fff !important;
+      }
+
+      [data-component="sections/section-benefits"] .box-benefits ul li,
+      [data-component="templates/footer"] .row-2 {
+        background-color: #001460 !important;
+      }
+
+      [data-component="sections/section-video-2"] {
+        background-color: #001460 !important;
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        padding: 28rem 20rem !important;
+      }
+
+      [data-component="sections/section-video-2"] .title-default,
+      [data-component="sections/section-video-2"] .title-default b {
+        color: #fff !important;
+        margin-bottom: 18rem !important;
+      }
+
+      [data-component="sections/section-hero"] {
+        background-image: linear-gradient(0deg, #001460 0, #5a6ca7 14%, #fff 43%, #fff 100%) !important;
+      }
+
+      .preloader__bar__progress {
+        background-color: #e5ad1a !important;
+      }
+
+      [data-component="sections/section-video-1"] .box-video {
+        margin-bottom: 24rem !important;
+      }
+
+      [data-component="sections/section-video-1"] .thumb-video {
+        display: block;
+        overflow: hidden;
+        border-radius: 34rem;
+      }
+
+      [data-component="sections/section-video-1"] .thumb-video > img:first-child {
+        display: block;
+        width: 100%;
+        transition: transform 0.35s ease, filter 0.35s ease;
+      }
+
+      [data-component="sections/section-video-1"] .thumb-video:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 20, 96, 0.06) 0%, rgba(0, 20, 96, 0.2) 100%);
+        opacity: 0.8;
+        transition: opacity 0.35s ease;
+        pointer-events: none;
+      }
+
+      [data-component="sections/section-video-1"] .video-play-badge {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        width: 110px;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 28px;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: video-play-pulse 1.8s infinite;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      [data-component="sections/section-video-1"] .video-play-badge img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      [data-component="sections/section-video-1"] .thumb-video:hover > img:first-child {
+        transform: scale(1.03);
+        filter: brightness(0.92);
+      }
+
+      [data-component="sections/section-video-1"] .thumb-video:hover:before {
+        opacity: 1;
+      }
+
+      [data-component="sections/section-video-1"] .thumb-video:hover .video-play-badge {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.38);
+      }
+
+      @keyframes video-play-pulse {
+        0% {
+          box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28), 0 0 0 0 rgba(255, 255, 255, 0.22);
+        }
+
+        50% {
+          box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34), 0 0 0 14px rgba(255, 255, 255, 0);
+        }
+
+        100% {
+          box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28), 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+      }
+
+      [data-component="sections/section-hero"] .box-text-img .box-text p {
+        max-width: 300px !important;
+        padding-right: 28px;
+      }
+
+      .top-logo {
+        display: block;
+        width: 220px;
+        max-width: 100%;
+        margin: 0 auto 10px;
+      }
+
+      .logo-1 {
+        display: block !important;
+        width: 260px !important;
+        max-width: 100%;
+      }
+
+      .row-1 {
+        justify-content: center !important;
+      }
+
+      .lead-success-modal {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.1s ease, visibility 0.1s ease;
+        z-index: 10000;
+      }
+
+      .lead-success-modal.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .lead-success-modal__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 20, 96, 0.58);
+        backdrop-filter: blur(4px);
+      }
+
+      .lead-success-modal__dialog {
+        width: min(100%, 660px);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, #f7f9ff 100%);
+        border-radius: 28px;
+        padding: 42px 34px 32px;
+        text-align: center;
+        box-shadow: 0 28px 80px rgba(0, 20, 96, 0.24);
+        z-index: 1;
+        transform: translateY(8px) scale(0.99);
+        transition: transform 0.1s ease;
+      }
+
+      .lead-success-modal.is-open .lead-success-modal__dialog {
+        transform: translateY(0) scale(1);
+      }
+
+      .lead-success-modal__close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        color: #001460;
+        font-size: 32px;
+        line-height: 1;
+        background: rgba(0, 20, 96, 0.08);
+      }
+
+      .lead-success-modal__badge {
+        width: 82px;
+        height: 82px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e5ad1a;
+        color: #001460;
+        box-shadow: 0 16px 36px rgba(229, 173, 26, 0.34);
+      }
+
+      .lead-success-modal__badge span {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .lead-success-modal__title {
+        margin-bottom: 14px;
+        font-size: 50rem;
+        line-height: 1;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #001460;
+      }
+
+      .lead-success-modal__text {
+        max-width: 470px;
+        margin: 0 auto 28px;
+        font-size: 28rem;
+        line-height: 1.45;
+        color: #3e4c78;
+      }
+
+      .lead-success-modal__actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .lead-success-modal__button {
+        min-height: 72px;
+        border-radius: 18px;
+        padding: 16px 18px;
+        font-size: 20rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        white-space: nowrap;
+        transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+      }
+
+      .lead-success-modal__button-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        flex: 0 0 28px;
+        margin-right: 2px;
+      }
+
+      .lead-success-modal__button-icon svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform: translateY(1px);
+      }
+
+      .lead-success-modal__button:hover {
+        transform: translateY(-2px);
+      }
+
+      .lead-success-modal__button--secondary {
+        color: #001460;
+        background: rgba(0, 20, 96, 0.14);
+        font-size: 24rem;
+        font-weight: 900;
+      }
+
+      .lead-success-modal__button--secondary:hover {
+        background: rgba(0, 20, 96, 0.2);
+      }
+
+      .lead-success-modal__button--primary {
+        color: #fff;
+        background: linear-gradient(135deg, #001460 0%, #173498 100%);
+        box-shadow: 0 14px 28px rgba(0, 20, 96, 0.2);
+        overflow: hidden;
+        animation: button-pulse 2s infinite;
+      }
+
+      .lead-success-modal__button--primary:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -140%;
+        width: 32%;
+        height: 100%;
+        background: linear-gradient(
+          100deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.18) 35%,
+          rgba(255, 255, 255, 0.7) 50%,
+          rgba(255, 255, 255, 0.18) 65%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-22deg);
+        pointer-events: none;
+        animation: button-shine 2.6s infinite;
+      }
+
+      .lead-success-modal__button--primary:hover {
+        box-shadow: 0 18px 34px rgba(0, 20, 96, 0.28);
+      }
+
+      body.modal-opened {
+        overflow: hidden;
+      }
+
+      @media (max-width: 767px) {
+        .lead-success-modal__dialog {
+          padding: 36px 22px 22px;
+          border-radius: 24px;
+        }
+
+        .lead-success-modal__title {
+          font-size: 34rem;
+        }
+
+        .lead-success-modal__text {
+          font-size: 20rem;
+          margin-bottom: 22px;
+        }
+
+        .lead-success-modal__button {
+          min-height: 60px;
+          font-size: 17rem;
+          white-space: normal;
+        }
+
+        .lead-success-modal__button--secondary {
+          font-size: 20rem;
+        }
+      }
+    </style>
+    <script src="js/main.min.js"></script>
+    <script>
+      (function () {
+        var modal = document.querySelector(".lead-success-modal");
+        if (!modal) {
+          return;
+        }
+
+        function closeLeadModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("modal-opened");
+        }
+
+        function openLeadModal() {
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("modal-opened");
+        }
+
+        document.addEventListener("click", function (event) {
+          if (event.target.closest("[data-close-lead-modal]")) {
+            closeLeadModal();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeLeadModal();
+          }
+        });
+
+        $(document).on("lead.success", function () {
+          openLeadModal();
+        });
+      })();
+    </script>
+  </body>
+</html>
