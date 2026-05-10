@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br" prefix="og: http://ogp.me/ns#" itemscope="" itemtype="http://schema.org/WebPage">
   <head>
     <meta charset="utf-8">
@@ -26,6 +26,74 @@
     <meta itemprop="image" content="/assets/images/share.jpg?1756921621298">
     <meta name="theme-color" content="#001460">
     <link rel="shortcut icon" href="images/sunhouse.ico">
+    <script>
+      window.SunHouseTrackingConfig = {
+        gtmId: 'GTM-KN24CBFT', // ID do Google Tag Manager. Ex.: GTM-XXXXXXX
+        metaPixelId: '1611450760008964', // ID numérico do Meta Pixel. Ex.: 123456789012345
+        sheetEndpoint: 'https://script.google.com/macros/s/AKfycbwXsXAbDVzzs10HoNwm767IIJNUP_H6FMK5Zo72PeBU2IUFreEyZZ1JAk57nFm_jM8/exec' // URL do seu endpoint/web app para salvar leads na planilha. Ex.: https://script.google.com/macros/s/SEU_ID/exec
+      };
+    </script>
+    <script>
+      (function (w, d, s, l) {
+        var config = w.SunHouseTrackingConfig || {};
+        var gtmId = config.gtmId || '';
+
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+
+        if (!gtmId) {
+          return;
+        }
+
+        var firstScript = d.getElementsByTagName(s)[0];
+        var tag = d.createElement(s);
+        var dataLayerSuffix = l !== 'dataLayer' ? '&l=' + l : '';
+
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtm.js?id=' + gtmId + dataLayerSuffix;
+        firstScript.parentNode.insertBefore(tag, firstScript);
+      })(window, document, 'script', 'dataLayer');
+    </script>
+    <script>
+      (function (w, d) {
+        var config = w.SunHouseTrackingConfig || {};
+        var metaPixelId = config.metaPixelId || '';
+
+        if (!metaPixelId) {
+          return;
+        }
+
+        !(function (f, b, e, v, n, t, s) {
+          if (f.fbq) {
+            return;
+          }
+
+          n = f.fbq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+
+          if (!f._fbq) {
+            f._fbq = n;
+          }
+
+          n.push = n;
+          n.loaded = true;
+          n.version = '2.0';
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = true;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(w, d, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        w.fbq('init', metaPixelId);
+        w.fbq('track', 'PageView');
+      })(window, document);
+    </script>
     <link rel="stylesheet" type="text/css" href="css/main.min.css">
     <style>
       .preloader {
@@ -82,6 +150,10 @@
     </style>
   </head>
   <body id="index" class="pause-scroll">
+    <!-- Preencha o ID e descomente se quiser manter o fallback noscript do GTM -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    <!-- Preencha o ID e descomente se quiser manter o fallback noscript do Meta Pixel -->
+    <!-- <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"></noscript> -->
     <div class="preloader">
       <div class="preloader__bar">
         <div class="preloader__bar__progress">
@@ -399,6 +471,11 @@
     </footer>
     <script>
       var base = "/";
+    </script>
+    <script>
+      window.SunHouseSheetConfig = {
+        endpoint: window.SunHouseTrackingConfig.sheetEndpoint || ''
+      };
     </script>
     <!-- Sun House overrides -->
     <style>
@@ -791,6 +868,203 @@
       }
     </style>
     <script src="js/main.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var form = document.querySelector('.form-simulator');
+        var modal = document.querySelector('.lead-success-modal');
+        var trackingConfig = window.SunHouseTrackingConfig || {};
+        var sheetConfig = window.SunHouseSheetConfig || {};
+        var sheetEndpoint = sheetConfig.endpoint || '';
+        var lastSubmittedData = null;
+        var sheetSynced = false;
+        var successTracked = false;
+
+        window.dataLayer = window.dataLayer || [];
+
+        if (!form) {
+          return;
+        }
+
+        function normalizePhone(value) {
+          return (value || '').replace(/\D+/g, '');
+        }
+
+        function pushDataLayer(payload) {
+          window.dataLayer.push(payload);
+        }
+
+        function trackMeta(eventName, params) {
+          if (!trackingConfig.metaPixelId || typeof window.fbq !== 'function') {
+            return;
+          }
+
+          window.fbq('trackCustom', eventName, params || {});
+        }
+
+        function safeValue(field) {
+          var name = field.name || '';
+          var type = (field.type || '').toLowerCase();
+
+          if (name === 'nome' || name === 'email' || name === 'celular') {
+            return field.value ? 'preenchido' : 'vazio';
+          }
+
+          if (type === 'radio') {
+            var checkedField = form.querySelector('[name="' + name + '"]:checked');
+            return checkedField ? checkedField.value : '';
+          }
+
+          return field.value || '';
+        }
+
+        function buildFormPayload() {
+          var conheceChecked = form.querySelector('[name="conhece"]:checked');
+          var consumoChecked = form.querySelector('[name="consumo"]:checked');
+
+          return {
+            submitted_at: new Date().toISOString(),
+            page_url: window.location.href,
+            nome: (form.querySelector('[name="nome"]') || {}).value || '',
+            celular: normalizePhone((form.querySelector('[name="celular"]') || {}).value || ''),
+            email: (form.querySelector('[name="email"]') || {}).value || '',
+            segmento: (form.querySelector('[name="segmento"]') || {}).value || '',
+            conhece: conheceChecked ? conheceChecked.value : '',
+            consumo: consumoChecked ? consumoChecked.value : ''
+          };
+        }
+
+        function sendToGoogleSheets(payload) {
+          if (!sheetEndpoint || !payload || sheetSynced) {
+            return;
+          }
+
+          fetch(sheetEndpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          sheetSynced = true;
+        }
+
+        function pushFieldEvent(field, interactionType) {
+          if (!field.name) {
+            return;
+          }
+
+          var payload = {
+            event: 'sunhouse_form_field',
+            form_name: 'form_sunhouse',
+            field_name: field.name,
+            field_type: field.type || field.tagName.toLowerCase(),
+            interaction_type: interactionType,
+            field_value_safe: safeValue(field)
+          };
+
+          pushDataLayer(payload);
+          trackMeta('SunHouseFormField', payload);
+        }
+
+        function trackLeadSuccess() {
+          if (successTracked) {
+            return;
+          }
+
+          successTracked = true;
+
+          var payload = {
+            event: 'sunhouse_form_success',
+            form_name: 'form_sunhouse'
+          };
+
+          pushDataLayer(payload);
+          trackMeta('SunHouseLeadSuccess', {
+            form_name: 'form_sunhouse'
+          });
+          sendToGoogleSheets(lastSubmittedData);
+        }
+
+        form.querySelectorAll('input, select').forEach(function (field) {
+          field.addEventListener('blur', function () {
+            pushFieldEvent(field, 'blur');
+          });
+
+          field.addEventListener('change', function () {
+            pushFieldEvent(field, 'change');
+          });
+        });
+
+        form.addEventListener('submit', function () {
+          lastSubmittedData = buildFormPayload();
+          sheetSynced = false;
+          successTracked = false;
+
+          var payload = {
+            event: 'sunhouse_form_submit_attempt',
+            form_name: 'form_sunhouse'
+          };
+
+          pushDataLayer(payload);
+          trackMeta('SunHouseFormSubmitAttempt', {
+            form_name: 'form_sunhouse'
+          });
+        });
+
+        document.querySelectorAll('[data-go-to-form]').forEach(function (button, index) {
+          button.addEventListener('click', function () {
+            var payload = {
+              event: 'sunhouse_cta_click',
+              cta_name: 'quero_economizar',
+              cta_position: index + 1
+            };
+
+            pushDataLayer(payload);
+            trackMeta('SunHouseCtaClick', payload);
+          });
+        });
+
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+          link.addEventListener('click', function () {
+            var payload = {
+              event: 'sunhouse_whatsapp_click',
+              destination: link.href
+            };
+
+            pushDataLayer(payload);
+            trackMeta('Contact', {
+              channel: 'whatsapp',
+              destination: link.href
+            });
+          });
+        });
+
+        if (modal) {
+          var modalObserver = new MutationObserver(function () {
+            if (modal.classList.contains('is-open')) {
+              trackLeadSuccess();
+            }
+          });
+
+          modalObserver.observe(modal, {
+            attributes: true,
+            attributeFilter: ['class']
+          });
+        }
+
+        if (window.jQuery) {
+          window.jQuery(document).on('lead.success', function () {
+            trackLeadSuccess();
+          });
+        }
+
+        document.addEventListener('lead.success', function () {
+          trackLeadSuccess();
+        });
+      });
+    </script>
     <script>
       (function () {
         var modal = document.querySelector(".lead-success-modal");
